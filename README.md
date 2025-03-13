@@ -46,7 +46,9 @@ fastqc Ec883_1.fq.gz Ec883_2.fq.gz
  ![Screenshot 2025-02-27 142859](https://github.com/user-attachments/assets/0b1ad0b6-ccac-4196-8adb-dad782e5b278)
  ## Ec883_4 
  ![Screenshot 2025-02-27 142920](https://github.com/user-attachments/assets/30f98a67-7b70-4577-9b44-40eaa1aa572c)
-
+## sending the trimmed paired files to the super computer 
+'scp rdta226@rdta226.cs.uky.edu:~/unix/MyGenome/Po17/Ec883_1_paired.fq ngs@10.163.183.71:Desktop/project/farman_s25abt480/rdta226'
+'scp rdta226@rdta226.cs.uky.edu:~/unix/MyGenome/Po17/Ec883_2_paired.fq ngs@10.163.183.71:Desktop/project/farman_s25abt480/rdta226'
 # Genome assembly 
 ## Using velvetoptimiser on my data, step size 10
  sbatch velvetoptimiser_noclean.sh Ec883_1_paired.fq -s 61 -e 131 -x 10 -d Ec883_velvet_optimal
