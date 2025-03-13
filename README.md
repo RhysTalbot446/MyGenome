@@ -1,12 +1,13 @@
-# MyGenome
+# MyGenome 
+## assessing quality on samples data with fastqc to figure out if the data needs to be trimmed with trimmomatic for further use in assembling a genome
 ## Created a directory to keep my sequences in 
 mkdir MyGenome 
 ## Downloaded the samples being used in the project to the MyGenome directory 
-scp 
+scp ngs@10.163.183.71:Desktop/Po17 rdta226@rdta226.cs.uky.edu:~/unix/MyGenome
 ## Downloaded necesary tools for analyzing and processing the sequences
-wget https://d3gcli72yxqn2z.cloudfront.net/downloads/connect/latest/bin/ibm-aspera-connect_4.2.13.820_linux_x86_64.tar.gz
-tar zxvf ibm-aspera-connect_4.2.13.820_linux_x86_64.tar.gz
-scp "C:\Users\rhyst\Downloads\aspera.openssh" rdta226@rdta226.cs.uky.edu:unix/MyGenome
+'wget https://d3gcli72yxqn2z.cloudfront.net/downloads/connect/latest/bin/ibm-aspera-connect_4.2.13.820_linux_x86_64.tar.gz'
+'tar zxvf ibm-aspera-connect_4.2.13.820_linux_x86_64.tar.gz'
+'scp "C:\Users\rhyst\Downloads\aspera.openssh" rdta226@rdta226.cs.uky.edu:unix/MyGenome'
 ## uploading my sequences to NCBI database for SRA/submission 
  ~/.aspera/connect/bin/ascp -i MyGenome/aspera.openssh -QT -l100m -k1 -d MyGenome/Po17/sequences/ subasp@upload.ncbi.nlm.nih.gov:uploads/Rhys.Talbot_uky.edu_f1AchzO0
 ## running my samples through fastqc 
