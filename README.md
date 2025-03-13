@@ -1,5 +1,5 @@
 # MyGenome 
-## assessing quality on samples data with fastqc to figure out if the data needs to be trimmed with trimmomatic for further use in assembling a genome
+## assessing quality on samples data with fastqc to figure out if the data is of good quality and if it needs to be trimmed with trimmomatic becasue of adapter contamination for further use in assembling a genome
 ## Created a directory to keep my sequences in 
 mkdir MyGenome 
 ## Downloaded the samples being used in the project to the MyGenome directory 
@@ -27,7 +27,7 @@ fastqc Ec883_1.fq.gz Ec883_2.fq.gz
 ![Screenshot 2025-02-27 142802](https://github.com/user-attachments/assets/388e9b12-99d4-4408-9945-d7eade9f5a38)
 ## Ec883_2
 ![Screenshot 2025-02-27 142830](https://github.com/user-attachments/assets/f72bd4e0-f0b1-4ae2-8e22-4e60099bad6c)
-## Trimming the samples to remove adaptor contamination 
+## Trimming the samples to remove adaptor contamination and then retesting with Fastqc to see if it improved on adapter contamination and overall quality 
  java -jar ~/sequences/trimmomatic-0.38.jar PE -threads 2 -phred33 -trimlog Ec883_errorlog.txt Ec883_1_paired.fq Ec883_2_paired.fq Ec883_3_paired.fq Ec883_3_unpaired.fq Ec883_4_paired.fq Ec883_4_unpaired.fq ILLUMINACLIP:adaptors.fa:2:30:10 SLIDINGWINDOW:20:20 MINLEN:100
  ## Running trimmed samples through fastqc again 
  fastqc Ec883_3_paired.fq Ec883_4_paired.fq
